@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:welcome, :new, :create]
   def welcome
   end
 
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: user_params[:username])
     if @user
       session[:user_id] = @user.id
+      flash[:success] = "You successfuly logged in !"
       redirect_to @user
     else
       render :new

@@ -6,15 +6,15 @@
 <div class="m-auto d-flex flex-column">
   <p>
     <%= f.label :event_name %><br>
-    <%= f.text_field :event_name, class: 'form-control' %>
+    <%= f.text_field :event_name, class: 'form-control', required: true %>
   </p>
   <p>
     <%= f.label :location %><br>
-    <%= f.text_field :location, class: 'form-control' %>
+    <%= f.text_field :location, class: 'form-control', required: true %>
   </p>
   <p>
     <%= f.label :time %><br>
-    <%= f.datetime_field :time, class: 'form-control mb-4' %>
+    <%= f.datetime_field :time, class: 'form-control mb-4', required: true %>
   </p>
   <p>
     <%= f.submit 'Create Event', class: 'btn btn-dark btn-lg d-block w-100' %>

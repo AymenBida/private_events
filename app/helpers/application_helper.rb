@@ -11,4 +11,12 @@ module ApplicationHelper
   def create_an_event
     render 'shared/create_an_event' if user_signed_in?
   end
+
+  def show_alert
+    render 'shared/alert' if flash[:error]
+  end
+
+  def show_notice
+    render 'shared/notice' if flash[:success]
+  end
 end
