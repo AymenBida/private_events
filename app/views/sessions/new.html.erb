@@ -1,0 +1,11 @@
+<div class="p-5 border rounded m-auto w-75">
+<h1>Welcome to your private space</h1>
+<p>To log in enter your username and press start</p>
+<%= form_with scope: :user, url: sessions_path do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username, required: true %>
+
+<%= f.submit 'Start' %>
+<% end %>
+</div>
+
