@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: user_params[:username])
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to @user
     else
       render :new
     end
