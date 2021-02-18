@@ -7,4 +7,8 @@ module ApplicationHelper
       render 'shared/sign_buttons'
     end
   end
+
+  def create_an_event
+    render 'shared/create_an_event' if user_signed_in?
+  end
 end

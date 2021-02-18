@@ -1,7 +1,7 @@
 <div class="p-5 border rounded m-auto w-75">
   <h1>Welcome to your private space</h1>
   <p class="mb-4">To log in enter your username and press connect</p>
-  <%= form_with scope: :user, url: sessions_path do |f| %>
+  <%= form_with scope: :user, url: '/sessions' do |f| %>
     <div class="input-group">
       <%= f.text_field :username, required: true, placeholder: 'Username', class: 'form-control' %>
       <%= f.submit 'Connect', class: 'btn btn-dark' %>

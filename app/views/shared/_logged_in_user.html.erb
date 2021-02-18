@@ -1,2 +1,2 @@
-<span class="ml-auto nav-link text-white"><%= current_user.username %></span>
-<%= link_to 'Sign Out', session_path, method: :delete, class: 'btn btn-outline-danger' %>
+<%= link_to "#{current_user.username}", current_user, class: 'ml-auto nav-link text-white'  %>
+<%= link_to 'Sign Out', sessions_path, method: :delete, class: 'btn btn-outline-danger' %>
