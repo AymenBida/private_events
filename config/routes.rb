@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   delete 'sessions/destroy', as: 'sessions'
   resources :sessions, only: [:create, :new]
   resources :users, only: [:create, :new, :show]
-  resources :events
+  resources :events do
+  end
   resources :invitations, only: [:create, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
