@@ -2,11 +2,7 @@
   <table class="table mb-4">
     <thead>
       <tr>
-        <th colspan=3 class="text-center">
-          <h2>Your event</h2>
-        </th>
-      </tr>
-      <tr>
+        <th scope="col">Host</th>
         <th scope="col">Event name</th>
         <th scope="col">Location</th>
         <th scope="col">Date & Time</th>
@@ -14,11 +10,12 @@
     </thead>
     <tbody>
       <tr>
+        <td><%= @event.user.username %></td>
         <td><%= @event.event_name %></td>
         <td><%= @event.location %></td>
         <td><%= @event.time %></td>
       </tr>
     </tbody>
   </table>
-  <%= link_to 'Edit event', edit_event_path, class: 'btn btn-dark btn-lg d-block text-center'  %>
+  <%= show_edit_event(@event) %>
 </div>

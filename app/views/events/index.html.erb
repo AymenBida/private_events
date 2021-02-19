@@ -1,0 +1,25 @@
+<div class="p-5 border rounded m-auto w-100">
+  <h1 class="mb-3">Events list</h1>
+  <table class="table mb-4">
+    <thead>
+      <tr>
+        <th scope="col">Host</th>
+        <th scope="col">Event name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Date & Time</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.user.username %></td>
+          <td><%= event.event_name %></td>
+          <td><%= event.location %></td>
+          <td><%= event.time %></td>
+          <td><%= link_to 'Show event', event, class: 'btn btn-info btn-sm' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
