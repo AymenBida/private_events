@@ -6,9 +6,9 @@ class InvitationsController < ApplicationController
 
   def create
     @event = Event.find(params[:event_id])
-    @invitation = @event.invitations.build(attendee_id: params[:invitation][:attendee_id], host_id: current_user.id)
-    p params[:attendee_id]
-    p current_user
+    @invitation = @event.invitations.build(user_id: params[:invitation][:attendee_id])
+    p @invitation.valid?
+    p @invitation.errors.full_messages
     if @invitation.save
       puts 'SUCCCCCCCCESS'
     else
