@@ -13,7 +13,9 @@ class SessionsController < ApplicationController
       flash[:success] = "You successfuly logged in !"
       redirect_to @user
     else
+      flash.now[:error] = "Username don't exist, click on sign up to register"
       render :new
+      
     end
   end
 
