@@ -17,5 +17,13 @@
       </tr>
     </tbody>
   </table>
+  <ul>
+    <h3>Invited Guests</h3>
+    <% @attendees.each do |e| %>
+      <li>
+        <%= e %>
+      </li>
+    <% end %>
+  </ul>
   <%= show_edit_event(@event) %>
 </div>
