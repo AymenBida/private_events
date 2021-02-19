@@ -1,0 +1,11 @@
+<div class="p-5 border rounded m-auto w-100">
+  <h1>Invite</h1>
+  <p class="mb-4">Choose people to invite and click on invite</p>
+  <%= form_with model: @invitation do |f| %>
+    <div class="input-group">
+      <%= f.label :attendee_id, 'Invited person' %>
+      <%= f.select :attendee_id, @invited_users %>
+      <%= f.submit 'Invite' %>
+    </div>
+  <% end %>
+</div>

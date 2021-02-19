@@ -6,6 +6,7 @@
         <th scope="col">Event name</th>
         <th scope="col">Location</th>
         <th scope="col">Date & Time</th>
+        <th scope="col">Invitations</th>
         <th scope="col" colspan=2>Actions</th>
       </tr>
     </thead>
@@ -16,6 +17,7 @@
         <td><%= event.event_name %></td>
         <td><%= event.location %></td>
         <td><%= event.time %></td>
+        <td><%= link_to 'Invite people', new_invitation_path, class: 'btn btn-success btn-sm' %></td>
         <td><%= link_to 'Show event', event, class: 'btn btn-info btn-sm' %></td>
         <td><%= link_to 'Delete', event, method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: "Are you sure?"} %></td>
       </tr>
