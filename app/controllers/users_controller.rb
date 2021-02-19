@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]) 
+    @events = @user.invitations.joins(event: :user).select(:event_name, :location, :time, :username)
   end
 
   private

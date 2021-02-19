@@ -1,4 +1,4 @@
-<div class="p-5 border rounded m-auto w-100">
+<div class="p-5 border rounded mx-auto w-100 mb-3">
 <h1 class="mb-3">My events</h1>
 <table class="table mb-4">
     <thead>
@@ -20,6 +20,32 @@
         <td><%= link_to 'Invite people', "/events/#{event.id}/invitations/new", class: 'btn btn-success btn-sm' %></td>
         <td><%= link_to 'Show event', event, class: 'btn btn-info btn-sm' %></td>
         <td><%= link_to 'Delete', event, method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+    
+      
+    </tbody>
+  </table>
+</div>
+<div class="p-5 border rounded m-auto w-100">
+<h1 class="mb-3">My invitations</h1>
+<table class="table mb-4">
+    <thead>
+      <tr>
+        <th scope="col">Host</th>
+        <th scope="col">Event name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Date & Time</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.username %></td>
+        <td><%= event.event_name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.time %></td>
       </tr>
     <% end %>
     
