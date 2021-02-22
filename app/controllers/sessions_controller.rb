@@ -1,21 +1,19 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:welcome, :new, :create]
-  def welcome
-  end
+  skip_before_action :require_login, only: %i[welcome new create]
+  def welcome; end
 
-  def new
-  end
+  def new; end
 
   def create
     @user = User.find_by(username: user_params[:username])
     if @user
       session[:user_id] = @user.id
-      flash[:success] = "You successfuly logged in !"
+      flash[:success] = 'You successfuly logged in !'
       redirect_to @user
     else
       flash.now[:error] = "Username don't exist, click on sign up to register"
       render :new
-      
+
     end
   end
 

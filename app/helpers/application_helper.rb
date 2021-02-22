@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def show_logged_in
     if user_signed_in?
       render 'shared/logged_in_user'
@@ -21,8 +20,22 @@ module ApplicationHelper
   end
 
   def show_edit_event(event)
-    if current_user == event.user
-      render 'shared/edit_event'
+    render 'shared/edit_event' if current_user == event.user
+  end
+
+  def show_my_invitations(events, title)
+    if events.empty?
+      render '/users/no_invitations', description: title
+    else
+      render '/users/my_invitations', events: events
+    end
+  end
+
+  def show_my_events(user)
+    if user.events.empty?
+      render '/users/no_events'
+    else
+      render '/users/my_events', user: user
     end
   end
 end

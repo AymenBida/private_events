@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     @future_events = Event.all.future_events
     @past_events = Event.all.past_events
   end
-  
+
   def new
     @event = Event.new
   end
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update(event_params)
-      flash[:success] = "Event successfully updated"
+      flash[:success] = 'Event successfully updated'
       redirect_to @event
     else
       render :edit
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
     puts event_params
     if @event.save
-      flash[:success] = "Event successfully created"
+      flash[:success] = 'Event successfully created'
       redirect_to @event
     else
       render :new
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.delete
-    flash[:success] = "Event successfully deleted"
+    flash[:success] = 'Event successfully deleted'
     redirect_to @event.user
   end
 

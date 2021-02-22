@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: %i[new create]
 
   def new
     @user = User.new
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
     @events = @user.invitations.joins(event: :user).select(:event_name, :location, :time, :username).order(time: :asc)
-    @future_events = @events.where("time >= :now", now: DateTime.now)
-    @past_events = @events.where("time < :now", now: DateTime.now)
+    @future_events = @events.where('time >= :now', now: DateTime.now)
+    @past_events = @events.where('time < :now', now: DateTime.now)
   end
 
   private
