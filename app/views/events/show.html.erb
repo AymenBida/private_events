@@ -24,11 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @attendees.each do |e| %>
-        <tr>
-          <td> - <%= e %></td>
-        </tr>
-      <% end %>
+      <%= show_attendees_list(@attendees) %>
     </tbody>
   </table>
   <%= show_edit_event(@event) %>

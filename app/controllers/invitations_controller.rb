@@ -1,7 +1,10 @@
 class InvitationsController < ApplicationController
   def new
     @invitation = Invitation.new
-    @invited_users = User.where("users.username != '#{current_user.username}'").pluck(:username, :id)
+    @event = Event.find(params[:event_id])
+    @attendees = @event.invitations.joins(:attendee).pluck(:username)
+    @invited_users = User.where("users.username != '#{current_user.username}'")
+      .where.not(username: @attendees).pluck(:username, :id)
   end
 
   def create

@@ -46,4 +46,20 @@ module ApplicationHelper
       render '/events/all_events', events: events, description: title.capitalize
     end
   end
+
+  def show_invite_form(invited)
+    if invited.empty?
+      render '/invitations/no_one_to_invite'
+    else
+      render '/invitations/form_invitation', invited_users: invited
+    end
+  end
+
+  def show_attendees_list(attendees)
+    if attendees.empty?
+      render '/events/no_attendees'
+    else
+      render '/events/attendees_list', attendees: attendees
+    end
+  end
 end
