@@ -17,13 +17,19 @@
       </tr>
     </tbody>
   </table>
-  <ul>
-    <h3>Invited Guests</h3>
-    <% @attendees.each do |e| %>
-      <li>
-        <%= e %>
-      </li>
-    <% end %>
-  </ul>
+  <table class="table mb-4">
+    <thead>
+      <tr>
+        <th scope="col">Invited guests</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @attendees.each do |e| %>
+        <tr>
+          <td> - <%= e %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
   <%= show_edit_event(@event) %>
 </div>
