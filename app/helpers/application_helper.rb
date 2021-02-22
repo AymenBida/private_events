@@ -27,7 +27,7 @@ module ApplicationHelper
     if events.empty?
       render '/users/no_invitations', description: title
     else
-      render '/users/my_invitations', events: events
+      render '/users/my_invitations', events: events, description: title.capitalize
     end
   end
 
