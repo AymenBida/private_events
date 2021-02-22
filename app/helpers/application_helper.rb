@@ -38,4 +38,12 @@ module ApplicationHelper
       render '/users/my_events', user: user
     end
   end
+
+  def show_all_events(events, title)
+    if events.empty?
+      render '/events/no_events', description: title
+    else
+      render '/events/all_events', events: events, description: title.capitalize
+    end
+  end
 end

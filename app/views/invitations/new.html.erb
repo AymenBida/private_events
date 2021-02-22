@@ -4,7 +4,7 @@
   <%= form_with scope: :invitation, url: event_invitations_path do |f| %>
     <div class="input-group">
       <%= f.label :attendee_id, 'Invited person' %>
-      <%= f.select :attendee_id, @invited_users %>
+      <%= f.select :attendee_id, @invited_users, {}, class: 'form-select' %>
       <%= f.submit 'Invite' %>
     </div>
   <% end %>
