@@ -1,0 +1,26 @@
+<div class="p-5 border rounded m-auto w-100">
+<h1 class="text-center mb-5">Edit your event here</h1>
+
+
+<%= form_with model: @event do |f| %>
+<div class="m-auto d-flex flex-column">
+  <p>
+    <%= f.label :event_name %><br>
+    <%= f.text_field :event_name, class: 'form-control', required: true %>
+  </p>
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location, class: 'form-control', required: true %>
+  </p>
+  <p>
+    <%= f.label :time %><br>
+    <%= f.datetime_field :time, class: 'form-control mb-4', required: true %>
+  </p>
+  <p>
+    <%= f.submit 'Edit Event', class: 'btn btn-dark btn-lg d-block w-100' %>
+  </p>
+  </div>
+<% end %>
+
+
+</div>

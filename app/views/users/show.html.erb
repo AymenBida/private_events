@@ -1,0 +1,9 @@
+<div class="p-5 border rounded mx-auto w-100 mb-3">
+  <%= show_my_events(@user) %>
+</div>
+<div class="p-5 border rounded mx-auto w-100 mb-3">
+  <%= show_my_invitations(@future_events, 'upcoming') %>  
+</div>
+<div class="p-5 border rounded mx-auto w-100">
+  <%= show_my_invitations(@past_events, 'past') %> 
+</div>

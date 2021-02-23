@@ -1,0 +1,9 @@
+<h1>Invite</h1>
+<p class="mb-4">Choose people to invite and click on invite</p>
+<%= form_with scope: :invitation, url: event_invitations_path do |f| %>
+  <%= f.label :attendee_id, 'Invited person', class: 'form-label' %>
+  <div class="input-group">
+    <%= f.select :attendee_id, invited_users, {}, class: 'form-control' %>
+    <%= f.submit 'Invite', class: 'btn btn-dark' %>
+  </div>
+<% end %>
