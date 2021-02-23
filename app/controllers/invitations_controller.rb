@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
 
   def attend
     @event = Event.find(params[:event_id])
-    
+
     @invitation = @event.invitations.build(user_id: current_user.id)
     if @invitation.save
       flash[:success] = "You are attending this event: #{@event.event_name}!"

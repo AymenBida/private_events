@@ -39,11 +39,11 @@ module ApplicationHelper
     end
   end
 
-  def show_all_events(events, title)
+  def show_all_events(events, title, past = nil)
     if events.empty?
       render '/events/no_events', description: title
     else
-      render '/events/all_events', events: events, description: title.capitalize
+      render '/events/all_events', events: events, description: title.capitalize, past: past
     end
   end
 
