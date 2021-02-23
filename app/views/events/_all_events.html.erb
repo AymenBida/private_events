@@ -6,7 +6,7 @@
       <th scope="col">Event name</th>
       <th scope="col">Location</th>
       <th scope="col">Date & Time</th>
-      <th scope="col">Actions</th>
+      <th scope="col" colspan=2>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +17,7 @@
         <td><%= event.location %></td>
         <td><%= event.time %></td>
         <td><%= link_to 'Show event', event, class: 'btn btn-info btn-sm' %></td>
+        <td><%= link_to 'Attend event', "/events/#{event.id}/invitations/attend", method: :post, class: 'btn btn-success btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -7,6 +7,18 @@ class InvitationsController < ApplicationController
       .where.not(username: @attendees).pluck(:username, :id)
   end
 
+  def attend
+    @event = Event.find(params[:event_id])
+    
+    @invitation = @event.invitations.build(user_id: current_user.id)
+    if @invitation.save
+      flash[:success] = "You are attending this event: #{@event.event_name}!"
+      redirect_to current_user
+    else
+      redirect_to events_path
+    end
+  end
+
   def create
     @event = Event.find(params[:event_id])
     @invitation = @event.invitations.build(user_id: params[:invitation][:attendee_id])
